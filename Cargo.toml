@@ -1,0 +1,26 @@
+[package]
+name = "psqlm"
+authors = ["Matthew Kim <matthew@pydantic.dev>"]
+version = "0.1.0"
+edition = "2021"
+description = "A psql wrapper that converts natural language to SQL using an LLM"
+license = "MIT"
+repository = "https://github.com/friendlymatthew/psqlm"
+keywords = ["postgres", "sql", "cli", "llm"]
+categories = ["command-line-utilities", "database"]
+
+[dependencies]
+anyhow = "1.0"
+clap = { version = "4", features = ["derive"] }
+reqwest = { version = "0.12", features = ["json", "native-tls", "stream"] }
+futures-util = "0.3"
+rustyline = "14"
+ratatui = "0.29"
+tui-textarea = "0.7"
+crossterm = "0.28"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["full"] }
+toml = "0.8"
+dirs = "5"
+sqlparser = "0.52"
