@@ -58,7 +58,8 @@
 
           postInstall = ''
             wrapProgram $out/bin/${pname} \
-              --prefix PATH : ${pkgs.lib.makeBinPath [ pkgs.postgresql ]}
+              --prefix PATH : ${pkgs.lib.makeBinPath [ pkgs.postgresql ]} \
+              --prefix LD_LIBRARY_PATH : ${pkgs.lib.makeLibraryPath [ pkgs.openssl ]}
           '';
         };
 
